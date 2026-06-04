@@ -7,4 +7,6 @@
 - [第二篇文章：Markdown 怎么用](posts/2.md)
 - [第三篇文章：搭建博客总结](posts/3.md)
 
-![描述](image/bg.jpg){: .align-center}
+![描述](assets/img/bg.jpg){: .align-center}
+
+![oj](/assets/img/bg.jpg)
