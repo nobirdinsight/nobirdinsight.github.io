@@ -1,0 +1,24 @@
+# 启用Jekyll默认主题minima（GitHub原生自带，无需安装）
+theme: minima
+
+# 站点基础信息
+title: 我的个人博客
+author: 你的名字
+description: 技术笔记与随笔记录
+
+# 开启侧边栏、导航栏
+header_pages:
+  - index.md
+# 想要加导航：- about.md
+
+# 代码块高亮
+highlighter: rouge
+
+# 开启目录（可选）
+markdown: kramdown
+kramdown:
+  toc_levels: 2..3
+
+
+minima:
+  skin: auto

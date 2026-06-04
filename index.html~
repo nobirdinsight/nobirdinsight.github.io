@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>我的个人博客</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>我的个人博客</h1>
+    <div class="post-list">
+      <h2>文章列表</h2>
+      <ul>
+        <li><a href="posts/1.md">开启</a></li>
+        <li><a href="posts/2.md">学习笔记</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
