@@ -3,9 +3,8 @@
 
 ## 文章列表
 
-- [学习 GitHub Pages](posts/1.md)
-- [Markdown 怎么用](posts/2.md)
-- [搭建博客总结](posts/3.md)
+- [关注](posts/info.md)
+
 
 
 
