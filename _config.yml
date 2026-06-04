@@ -23,4 +23,4 @@ minima:
   skin: auto
 
 # 引入自定义头部样式
-head_custom: _includes/custom-head.html
+# head_custom: _includes/custom-head.html
