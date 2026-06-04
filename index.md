@@ -8,3 +8,4 @@
 - [第三篇文章：搭建博客总结](posts/3.md)
 
 ![描述](image/bg.png){: .align-center}
+![描述](image/bg.jpg){: .align-center}
