@@ -1,0 +1,79 @@
+
+
+- index.md
+- assets
+  - img
+    - bg.jpg
+- _includes
+  - custom-head.html
+- posts
+  - 1.md
+  - 2.md
+- _config.yml
+
+
+_config.yml
+
+# 启用Jekyll默认主题minima（GitHub原生自带，无需安装）
+theme: minima
+
+# 站点基础信息
+title: 我的个人博客
+author: GHTSKJH
+description: 技术笔记与随笔记录
+
+# 开启侧边栏、导航栏
+header_pages:
+  - index.md
+# 想要加导航：- about.md
+
+# 代码块高亮
+highlighter: rouge
+
+# 开启目录（可选）
+markdown: kramdown
+kramdown:
+  toc_levels: 2..3
+
+minima:
+  skin: auto
+
+# 引入自定义头部样式
+# head_custom: _includes/custom-head.html
+
+index.md
+欢迎来到我的博客～
+
+## 文章列表
+
+- [第一篇文章：学习 GitHub Pages](posts/1.md)
+- [第二篇文章：Markdown 怎么用](posts/2.md)
+- [第三篇文章：搭建博客总结](posts/3.md)
+
+![描述](assets/img/bg.jpg){: .align-center}
+
+![oj](/assets/img/bg.jpg)
+
+
+custom-head.html
+<style>
+body {
+  background-image: url("/assets/img/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+/* 正文白色半透明防文字看不清 */
+div.page-content {
+  background: rgba(255,255,255,0.92);
+  padding: 30px;
+  border-radius: 10px;
+}
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark){
+  div.page-content {
+    background: rgba(32,32,32,0.9);
+  }
+}
+</style>
