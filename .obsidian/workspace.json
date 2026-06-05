@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "posts/周易.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "index 的反向链接列表"
+              "title": "周易 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "posts/周易.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "index 的出链列表"
+              "title": "周易 的出链列表"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md",
+                "file": "posts/周易.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "index 的大纲"
+              "title": "周易 的大纲"
             }
           },
           {
@@ -196,15 +196,15 @@
   },
   "active": "73e2c5832b29e894",
   "lastOpenFiles": [
-    "posts/info.md",
+    "posts/周易.md",
     "index.md",
-    "posts/3.md",
+    "posts/2.md",
+    "posts/1.md",
+    "posts/info.md",
     "posts/信源-我自己维护的关注信息源 1.md",
     "posts/3.md.md",
     "stuckture.org~",
     "stuckture.org",
-    "#stuckture.org#",
-    "posts/2.md",
-    "posts/1.md"
+    "#stuckture.org#"
   ]
 }
