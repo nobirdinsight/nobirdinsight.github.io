@@ -1,5 +1,8 @@
 {
   "newFileLocation": "folder",
   "newFileFolderPath": "posts",
-  "promptDelete": false
+  "promptDelete": false,
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": true,
+  "alwaysUpdateLinks": true
 }
