@@ -2,7 +2,7 @@
   "newFileLocation": "folder",
   "newFileFolderPath": "posts",
   "promptDelete": false,
-  "newLinkFormat": "shortest",
+  "newLinkFormat": "absolute",
   "useMarkdownLinks": true,
   "alwaysUpdateLinks": true
 }
