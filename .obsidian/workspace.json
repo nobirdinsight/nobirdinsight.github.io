@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "posts/mc服务器如何查找下线玩家的坐标.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "mc服务器如何查找下线玩家的坐标"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "d7462bd10b403796",
@@ -196,8 +197,16 @@
   },
   "active": "73e2c5832b29e894",
   "lastOpenFiles": [
-    "posts/周易.md",
+    "posts/未命名.md",
+    "posts/mc服务器如何查找下线玩家的坐标.md",
     "index.md",
+    "posts/Skills.md",
+    "posts/未命名 1.md",
+    "posts/未命名 2.md",
+    "posts/Github.md",
+    "posts/Git.md",
+    "posts/未命名.base",
+    "posts/周易.md",
     "posts/2.md",
     "posts/1.md",
     "posts/info.md",
