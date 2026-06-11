@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "d7462bd10b403796",
@@ -199,8 +198,8 @@
   "lastOpenFiles": [
     "posts/Git.md",
     "index.md",
-    "posts/mc服务器如何查找下线玩家的坐标.md",
     "posts/Skills.md",
+    "posts/mc服务器如何查找下线玩家的坐标.md",
     "posts/Github.md",
     "posts/未命名.md",
     "posts/未命名 1.md",
