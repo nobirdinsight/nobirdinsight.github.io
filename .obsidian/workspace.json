@@ -35,8 +35,7 @@
               "title": "技术实力，从哪里开始？"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -209,10 +208,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c0564112416e9993",
+  "active": "73e2c5832b29e894",
   "lastOpenFiles": [
-    "index.md",
     "posts/技术实力，从哪里开始？.md",
+    "index.md",
     "posts/Git.md",
     "posts/Skills.md",
     "posts/mc服务器如何查找下线玩家的坐标.md",
