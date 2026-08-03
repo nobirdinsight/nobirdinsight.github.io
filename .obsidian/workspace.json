@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "posts/Termux.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Termux"
             }
           }
         ]
@@ -173,13 +173,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md",
+                "file": "posts/Termux.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "index 的大纲"
+              "title": "Termux 的大纲"
             }
           }
         ]
@@ -200,12 +200,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "73e2c5832b29e894",
+  "active": "910e5888cea2037e",
   "lastOpenFiles": [
+    "posts/clipper/Termux 使用配置教程.md",
+    "index.md",
+    "posts/clipper",
+    "新建文件夹",
     "posts/SSH.md",
     "posts/技术实力，从哪里开始？.md",
     "posts/Termux.md",
-    "index.md",
     "posts/Git.md",
     "posts/Skills.md",
     "posts/mc服务器如何查找下线玩家的坐标.md",

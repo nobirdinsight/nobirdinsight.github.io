@@ -7,8 +7,7 @@ tags: []
 
 - https://termux.dev/docs
 
-
-[[Termux 使用配置教程]]
+[Termux 使用配置教程](posts/clipper/Termux%20使用配置教程.md) 
 ##### 基本操作
 ##### alias 起别名方法
 ```bash
@@ -199,12 +198,9 @@ cp ~/001_personal.git /storage/emulated/0/001_local/linshi
 2. `.ssh/`
 3. `.bashrc`
 
-主机重连的时候：[[ssh使用#termux 删除重装后再用 ssh 连接，出现下面的问题]]
+主机重连的时候：ssh使用#termux 删除重装后再用 ssh 连接，出现下面的问题
 后面也看到了，现在设备名叫 `u0_402` 了
 
 2025-05-14 23:47 刚刚发现，并没有能正常工作，其实前面只解决到了能连接，实际termux 那里git 都没下呢
 
-
-
-[[未写完-替换或添加软件源]]
 
