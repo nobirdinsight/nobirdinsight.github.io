@@ -7,7 +7,7 @@ tags: []
 
 - https://termux.dev/docs
 
-[Termux 使用配置教程](posts/clipper/Termux%20使用配置教程.md) 
+[Termux 使用配置教程](clipper/Termux%20使用配置教程.md) 
 ##### 基本操作
 ##### alias 起别名方法
 ```bash
