@@ -3,9 +3,9 @@
 
 ## 文章列表
 
-- [周易](posts/周易.md) 
 - [Git](posts/Git.md) 
 - [SSH](posts/SSH.md) 
+- [周易](posts/周易.md) 
 - [Github](posts/Github.md) 
 - [Skills](posts/Skills.md) 
 - [技术实力，从哪里开始？](posts/技术实力，从哪里开始？.md) 

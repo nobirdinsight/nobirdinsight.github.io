@@ -15,7 +15,7 @@ date modified: 2026-08-03
 
 你可以随时输入如 `man ssh_config` 来查看客户端配置文件的官方详解。
 
-二、常用 SSH 相关命令一览
+###### 二、常用 SSH 相关命令一览
 
 |命令|作用|示例|
 |---|---|---|
@@ -29,7 +29,7 @@ date modified: 2026-08-03
 |`sshd`|SSH 服务端守护进程（Linux服务）|`sudo systemctl start sshd`|
 
 
-三、SSH 配置文件详解
+###### 三、SSH 配置文件详解
 
 3.1 用户端配置文件 `~/.ssh/config`
 
@@ -87,7 +87,7 @@ AllowUsers user1 user2
 |`PubkeyAuthentication`|是否启用密钥登录|
 |`AuthorizedKeysFile`|公钥认证用的文件路径|
 
-四、测试 SSH 连接的常用操作
+###### 四、测试 SSH 连接的常用操作
 
 4.1 测试连接并显示调试信息
 ```bash
@@ -107,7 +107,7 @@ ssh-add -l
 ```
 若无输出或提示“agent 没有 identities”，需要 `ssh-add ~/.ssh/id_ed25519`
 
-五、SSH 技术细节结构总结
+###### 五、SSH 技术细节结构总结
 
 |层级|模块|说明|
 |---|---|---|
@@ -116,7 +116,7 @@ ssh-add -l
 |协议层|SSH-2 (RFC 4251~4254)|协议标准，包含认证、连接、多路复用等子协议|
 |传输层|TCP|默认端口 22，数据加密传输|
 
-六、SSH 所支持的认证方式
+###### 六、SSH 所支持的认证方式
 
 |方式|描述|
 |---|---|
@@ -126,7 +126,7 @@ ssh-add -l
 |Keyboard-interactive|多因子、验证码等（可拓展）|
 
 
-七、实用配置建议示例
+###### 七、实用配置建议示例
 
 多平台 GitHub / GitLab / 自建服务器
 
@@ -151,7 +151,7 @@ Host myserver
   IdentityFile ~/.ssh/id_rsa_server
 ```
 
-八、如何学习 SSH 更深入的技术细节？
+###### 八、如何学习 SSH 更深入的技术细节？
 
 推荐文档和资源：
 - OpenSSH 官方手册：[https://man.openbsd.org/ssh](https://man.openbsd.org/ssh)
@@ -159,21 +159,9 @@ Host myserver
 - Arch Wiki SSH：[https://wiki.archlinux.org/title/SSH](https://wiki.archlinux.org/title/SSH)
 - GitHub SSH 指南：[https://docs.github.com/en/authentication/connecting-to-github-with-ssh](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
 
-
-如果你想要：
-- `~/.ssh/config` 模板合集（多账户、跳板机、代理等）
-- ssh-agent 自动化配置脚本
-- 安全加固建议
-- OpenSSH 服务自建方案
-我可以帮你快速整理。你也可以贴出你的实际用途，我来帮你定制配置 
-
-
-###### 底部
-
-
-
+##### 遇到问题
 ###### termux 删除重装后再用 ssh 连接，出现下面的问题
-（缘由 [[Termux#2025-05-14 17:04 界面刷新问题]]）
+（缘由 [2025-05-14 17:04 界面刷新问题](Termux.md#2025-05-14%2017%2004%20界面刷新问题) 
 ```bash
 git fetch  
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  
@@ -194,60 +182,18 @@ fatal: Could not read from remote repository.
 Please make sure you have the correct access rights  
 and the repository exists.
 ```
-以下是询问 chatgpt 后的解答
-你遇到的这个错误提示是：
+错误提示是：
 ```
 WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
 ```
-这是 **SSH 的安全机制**在提醒你：你之前连接的主机 `[192.168.31.6]:8022` 的身份信息（即 **公钥指纹**）发生了变化。
-这通常有两个原因：
-📌 原因分析
-✅ 正常原因（常见）
-1. **远程服务器（或设备）重装系统了**
-2. **SSH 配置更换了密钥（如 ED25519 替代了 ECDSA）**
-3. **你连接的其实是另一个设备，但用了相同的 IP/端口**
-❌ 安全风险（不常见）
-可能是中间人攻击（MITM），但如果你在局域网内、IP 是自己家路由分配的，这种可能性极低。
-
-✅ 解决方法：删除旧的 known_hosts 记录
-提示里已经告诉你“出错的 key”是在：
-```
-Offending ECDSA key in /c/Users/nobir/.ssh/known_hosts:12
-```
-这表示：在你电脑的 `known_hosts` 文件中第 12 行存的是旧的主机公钥，现在这个 key 不匹配了。
-
-💻 方法 1：手动删除出错的那一行
-你可以使用文本编辑器打开该文件：
-```bash
-nano /c/Users/nobir/.ssh/known_hosts
-```
-删除第 12 行，保存即可。
-或者使用命令：
-```bash
-ssh-keygen -R [192.168.31.6]:8022
-```
-这会自动从 `known_hosts` 文件中移除这个主机记录。
-
-🚀 方法 2：重新连接并接受新的公钥
-然后你重新运行一次 Git 命令或 SSH 命令，例如：
-```bash
-ssh -p 8022 username@192.168.31.6
-```
-你会看到如下提示：
-```
-The authenticity of host ... can't be established.
-Are you sure you want to continue connecting (yes/no)?
-```
-输入 `yes`，系统就会将新的 host key 添加进 `known_hosts`，之后 `git fetch` 就不会再报错了。
-
- 🔐 补充：查看远程主机实际的 SSH 公钥指纹
-你可以在远程服务器上运行：
-```bash
-ssh-keygen -l -f /etc/ssh/ssh_host_ed25519_key.pub
-```
-这会显示远程主机当前的 key 指纹（用来确认这次是不是你自己重新安装或修改的设备）。
-
- ✅ 总结操作步骤（推荐）
+- 这是 **SSH 的安全机制**提醒：之前连接的主机 `[192.168.31.6]:8022` 的身份信息（即 **公钥指纹**）发生了变化。这通常有两个原因：
+	- 正常原因
+		1. **远程服务器（或设备）重装系统了**
+		2. **SSH 配置更换了密钥（如 ED25519 替代了 ECDSA）**
+		3. **你连接的其实是另一个设备，但用了相同的 IP/端口**
+	- 安全风险
+		- 可能是中间人攻击（MITM），但如果你在局域网内、IP 是自己家路由分配的，这种可能性极低。
+- 解决方法：
 ```bash
  1. 删除旧记录
 ssh-keygen -R [192.168.31.6]:8022
