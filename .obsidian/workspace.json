@@ -20,21 +20,8 @@
               "icon": "lucide-file",
               "title": "index"
             }
-          },
-          {
-            "id": "0c03eaa02b65e844",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.13.4"
-              },
-              "icon": "lucide-book-up",
-              "title": "版本说明 1.13.4"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -188,6 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "index.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -214,7 +202,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0c03eaa02b65e844",
+  "active": "73e2c5832b29e894",
   "lastOpenFiles": [
     "posts/clipper-一个干净明亮的地方（原文、译文）_ 海明威.md",
     "posts/clipper-【SQL 实验】更新操作 - CSDN 博客.md",
