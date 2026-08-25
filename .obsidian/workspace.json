@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/clipper-【SQL 实验】更新操作.md",
+                "file": "posts/clipper-【SQL实验】更新操作.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "clipper-【SQL 实验】更新操作"
+              "title": "clipper-【SQL实验】更新操作"
             }
           }
         ]
@@ -175,7 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "posts/clipper-【SQL 实验】更新操作.md",
+                "file": "posts/clipper-【SQL实验】更新操作.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -204,10 +204,10 @@
   },
   "active": "73e2c5832b29e894",
   "lastOpenFiles": [
-    "posts/clipper-一个干净明亮的地方-海明威.md",
     "index.md",
+    "posts/clipper-【SQL实验】更新操作.md",
+    "posts/clipper-一个干净明亮的地方-海明威.md",
     "posts/系统是如何运行的？.md",
-    "posts/clipper-【SQL 实验】更新操作.md",
     "posts/【SQL 实验】更新操作 - CSDN 博客.md",
     "posts/Termux.md",
     "posts/Skills.md",
