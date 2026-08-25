@@ -15,6 +15,6 @@
 	- https://link3.cc/ruach
 
 
-- [clipper-【SQL 实验】更新操作 - CSDN 博客](posts/clipper-【SQL%20实验】更新操作%20-%20CSDN%20博客.md)
-- [clipper-一个干净明亮的地方（原文、译文）_ 海明威](posts/clipper-一个干净明亮的地方（原文、译文）_%20海明威.md)
+- [clipper-【SQL 实验】更新操作](posts/clipper-【SQL%20实验】更新操作.md)
+- [clipper-一个干净明亮的地方-海明威](posts/clipper-一个干净明亮的地方-海明威.md)
 - 
