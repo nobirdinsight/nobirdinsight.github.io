@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "posts/mc服务器如何查找下线玩家的坐标.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "mc服务器如何查找下线玩家的坐标"
             }
           }
         ]
@@ -175,7 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md",
+                "file": "posts/mc服务器如何查找下线玩家的坐标.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -204,8 +204,8 @@
   },
   "active": "73e2c5832b29e894",
   "lastOpenFiles": [
-    "posts/clipper-【SQL实验】高级查询.md",
     "index.md",
+    "posts/clipper-【SQL实验】高级查询.md",
     "posts/clipper-【SQL实验】更新操作.md",
     "posts/clipper-一个干净明亮的地方-海明威.md",
     "posts/系统是如何运行的？.md",
