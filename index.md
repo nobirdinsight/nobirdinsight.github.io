@@ -5,7 +5,9 @@
 
 - [Git](posts/Git.md) 
 - [SSH](posts/SSH.md) 
-- [系统是如何运行的？](posts/系统是如何运行的？.md) 
+- [ ] [系统是如何运行的？](posts/系统是如何运行的？.md) 
+- [ ] [开源协议](posts/开源协议.md) 
+- [ ] [一周一项目001-PiliPala](posts/一周一项目001-PiliPala.md) 
 - [周易](posts/周易.md) 
 - [Github](posts/Github.md) 
 - [Skills](posts/Skills.md) 
