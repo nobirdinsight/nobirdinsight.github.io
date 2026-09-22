@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>电池容量换算器 | mAh ⇄ Wh</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background:
+      radial-gradient(900px 500px at 15% 0%, #16324f 0%, transparent 60%),
+      radial-gradient(700px 500px at 100% 100%, #10352c 0%, transparent 55%),
+      #0b1220;
+    color: #e6edf6;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 520px;
+    padding: 28px 26px 22px;
+    background: rgba(255, 255, 255, .045);
+    border: 1px solid rgba(255, 255, 255, .09);
+    border-radius: 20px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 28px 60px -22px rgba(0, 0, 0, .85);
+  }
+
+  h1 {
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sub {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #7f93ad;
+  }
+
+  .formula {
+    margin: 18px 0 20px;
+    padding: 10px 12px;
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: #8fb3cf;
+    background: rgba(255, 255, 255, .03);
+    border-left: 3px solid #38e0a1;
+    border-radius: 6px;
+    word-break: break-word;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12.5px;
+    color: #8ea3bb;
+    letter-spacing: .3px;
+  }
+
+  input[type=number] {
+    width: 100%;
+    padding: 13px 14px;
+    font-size: 17px;
+    font-variant-numeric: tabular-nums;
+    font-family: inherit;
+    color: #eaf2ff;
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid rgba(255, 255, 255, .13);
+    border-radius: 12px;
+    outline: none;
+    transition: border-color .18s, background .18s, box-shadow .18s;
+  }
+  input[type=number]::placeholder { color: #5b6d84; }
+  input[type=number]:focus {
+    border-color: #38e0a1;
+    background: rgba(56, 224, 161, .07);
+    box-shadow: 0 0 0 3px rgba(56, 224, 161, .16);
+  }
+  input[type=number]::-webkit-outer-spin-button,
+  input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  input[type=number] { -moz-appearance: textfield; appearance: textfield; }
+
+  .presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .presets button {
+    padding: 6px 11px;
+    font-size: 12.5px;
+    font-family: inherit;
+    color: #a9bdd6;
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: .18s;
+  }
+  .presets button:hover {
+    color: #eaf2ff;
+    border-color: rgba(56, 224, 161, .55);
+    background: rgba(56, 224, 161, .12);
+  }
+  .presets button.active {
+    color: #bff5df;
+    background: rgba(56, 224, 161, .18);
+    border-color: #38e0a1;
+  }
+
+  .convert {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    margin-top: 22px;
+  }
+  .field { flex: 1; min-width: 0; }
+  .switch {
+    flex: 0 0 auto;
+    padding-bottom: 12px;
+    font-size: 20px;
+    color: #38e0a1;
+    user-select: none;
+  }
+
+  .result {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 14px;
+    margin-top: 20px;
+    padding: 13px 15px;
+    font-size: 13px;
+    color: #9fd8c2;
+    background: rgba(56, 224, 161, .075);
+    border: 1px solid rgba(56, 224, 161, .2);
+    border-radius: 12px;
+  }
+  .result b {
+    color: #7df0bd;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tip {
+    margin-top: 14px;
+    font-size: 11.5px;
+    line-height: 1.6;
+    color: #63748b;
+  }
+
+  @media (max-width: 480px) {
+    .card { padding: 22px 18px 18px; }
+    .convert { flex-direction: column; align-items: stretch; gap: 10px; }
+    .switch { padding: 0; text-align: center; transform: rotate(90deg); }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>🔋 电池容量换算器</h1>
+  <p class="sub">毫安时 (mAh) ⇄ 瓦时 (Wh) 双向换算</p>
+
+  <div class="formula">
+    Wh = mAh × 电压(V) ÷ 1000 &nbsp;|&nbsp; mAh = Wh × 1000 ÷ 电压(V)
+  </div>
+
+  <div>
+    <label for="volt">电池电压 / V</label>
+    <input id="volt" type="number" value="3.7" step="0.01" min="0.01" inputmode="decimal">
+    <div class="presets" id="presets">
+      <button data-v="3.7">3.7V 锂离子</button>
+      <button data-v="3.85">3.85V 高压锂</button>
+      <button data-v="3.2">3.2V 磷酸铁锂</button>
+      <button data-v="1.5">1.5V 碱性</button>
+      <button data-v="1.2">1.2V 镍氢</button>
+      <button data-v="12">12V 铅酸</button>
+    </div>
+  </div>
+
+  <div class="convert">
+    <div class="field">
+      <label for="mah">毫安时 mAh</label>
+      <input id="mah" type="number" placeholder="输入 mAh" inputmode="decimal">
+    </div>
+    <div class="switch">⇄</div>
+    <div class="field">
+      <label for="wh">瓦时 Wh</label>
+      <input id="wh" type="number" placeholder="输入 Wh" inputmode="decimal">
+    </div>
+  </div>
+
+  <div class="result">
+    <span>等效能量：<b id="mwh">—</b> mWh</span>
+    <span>电压：<b id="vshow">3.7</b> V</span>
+  </div>
+
+  <p class="tip">
+    提示：mAh 与 Wh 之间必须通过电压才能换算。同一电池标注的 mAh 与 Wh 是等价的，
+    不同电压的电池不能只比较 mAh。
+  </p>
+</div>
+
+<script>
+(function () {
+  const voltEl = document.getElementById('volt');
+  const mahEl  = document.getElementById('mah');
+  const whEl   = document.getElementById('wh');
+  const mwhEl  = document.getElementById('mwh');
+  const vShow  = document.getElementById('vshow');
+  const presets = document.getElementById('presets');
+
+  // 最后被用户编辑的输入框（'mah' 或 'wh'）
+  let lastEdited = 'mah';
+
+  /* 保留 4 位有效数字，并去掉多余的 0 */
+  function fmt(n) {
+    if (!isFinite(n)) return '';
+    if (n === 0) return '0';
+    const abs = Math.abs(n);
+    if (abs >= 1e7 || abs < 1e-6) return n.toExponential(3);
+    const digits = Math.max(0, 4 - Math.floor(Math.log10(abs)) - 1);
+    return parseFloat(n.toFixed(Math.min(digits, 10))).toString();
+  }
+
+  function getVolt() {
+    const v = parseFloat(voltEl.value);
+    return (isFinite(v) && v > 0) ? v : null;
+  }
+
+  /* 由 mAh 计算 Wh */
+  function updateFromMah() {
+    const v = getVolt();
+    const m = parseFloat(mahEl.value);
+    if (v === null || !isFinite(m) || m < 0) {
+      whEl.value = '';
+      mwhEl.textContent = '—';
+      return;
+    }
+    const wh = m * v / 1000;
+    whEl.value = fmt(wh);
+    mwhEl.textContent = fmt(wh * 1000);
+  }
+
+  /* 由 Wh 计算 mAh */
+  function updateFromWh() {
+    const v = getVolt();
+    const w = parseFloat(whEl.value);
+    if (v === null || !isFinite(w) || w < 0) {
+      mahEl.value = '';
+      mwhEl.textContent = '—';
+      return;
+    }
+    mahEl.value = fmt(w * 1000 / v);
+    mwhEl.textContent = fmt(w * 1000);
+  }
+
+  function refresh() {
+    vShow.textContent = getVolt() === null ? '—' : voltEl.value;
+    if (lastEdited === 'wh') updateFromWh();
+    else updateFromMah();
+  }
+
+  mahEl.addEventListener('input', () => { lastEdited = 'mah'; refresh(); });
+  whEl.addEventListener('input',  () => { lastEdited = 'wh';  refresh(); });
+  voltEl.addEventListener('input', refresh);
+
+  /* 电压预设按钮 */
+  presets.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-v]');
+    if (!btn) return;
+    voltEl.value = btn.dataset.v;
+    [...presets.children].forEach(b => b.classList.toggle('active', b === btn));
+    refresh();
+  });
+
+  /* 初始值：5000 mAh @ 3.7V */
+  mahEl.value = '5000';
+  presets.querySelector('button[data-v="3.7"]').classList.add('active');
+  refresh();
+})();
+</script>
+</body>
+</html>

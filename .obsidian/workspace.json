@@ -188,8 +188,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -205,8 +204,12 @@
   },
   "active": "73e2c5832b29e894",
   "lastOpenFiles": [
-    "posts/一周一项目001-PiliPala.md",
+    "tools/battery.html",
+    "tools/新建文本文档.txt",
+    "tools/未命名.md",
     "index.md",
+    "tools",
+    "posts/一周一项目001-PiliPala.md",
     "posts/开源协议.md",
     "posts/mc服务器如何查找下线玩家的坐标.md",
     "posts/clipper-【SQL实验】高级查询.md",
