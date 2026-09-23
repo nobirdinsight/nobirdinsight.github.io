@@ -21,4 +21,4 @@
 - [clipper-【SQL实验】高级查询](posts/clipper-【SQL实验】高级查询.md)  
 
 ### 工具
-- [[/tools/battery.html]] 
+- [battary](https://nobirdinsight.github.io/tools/battery.html) 
